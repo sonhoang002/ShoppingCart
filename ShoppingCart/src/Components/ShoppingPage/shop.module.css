@@ -1,0 +1,45 @@
+.img {
+  width: 212px;
+  height: 212px;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
+
+.shopContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.container {
+  outline: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 10px;
+}
+
+.addOrRemoveContainer {
+  display: grid;
+  grid-template: 1fr / repeat(3, 45px);
+  justify-content: center;
+  align-items: center;
+  outline: 3px solid black;
+  border-radius: 15px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnStyle {
+  border-radius: 15px;
+  border: none;
+  background: transparent;
+}
+
+.spanNumber {
+  text-align: center;
+}

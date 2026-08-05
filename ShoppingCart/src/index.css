@@ -1,0 +1,7 @@
+.navButton {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid black;
+  border-radius: 4px;
+  text-decoration: none;
+}

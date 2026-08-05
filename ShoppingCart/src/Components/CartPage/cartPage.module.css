@@ -1,0 +1,49 @@
+.cartPage {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.items {
+  flex: 1;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cartItem img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.total {
+  min-width: 150px;
+  height: fit-content;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  font-weight: bold;
+}
+
+.btnStyle {
+  border-radius: 15px;
+  border: none;
+  background: transparent;
+}
+
+.spanNumber {
+  text-align: center;
+}
+
+.addOrRemoveContainer {
+  display: grid;
+  grid-template: 1fr / repeat(3, 45px);
+  justify-content: center;
+  align-items: center;
+  outline: 3px solid black;
+  border-radius: 15px;
+}
