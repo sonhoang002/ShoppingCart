@@ -1,0 +1,121 @@
+.checkoutPage {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.checkoutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+.form legend {
+  font-weight: bold;
+}
+
+.form input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.row > div {
+  flex: 1;
+}
+
+.form button {
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.orderSummary {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+.orderSummary legend {
+  font-weight: bold;
+}
+
+.orderItem,
+.total {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.orderItemLast {
+  border-bottom: 5px solid black;
+}
+
+.orderItem p {
+  margin: 0.25rem 0 0;
+}
+
+.total {
+  font-size: 20px;
+  border-bottom: 0;
+}
+
+.popupBackdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(0 0 0 / 45%);
+}
+
+.popup {
+  width: min(350px, 100%);
+  padding: 2rem;
+  text-align: center;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgb(0 0 0 / 25%);
+}
+
+.popup h2 {
+  margin-top: 0;
+}
+
+.popup button {
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .checkoutContent {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+}

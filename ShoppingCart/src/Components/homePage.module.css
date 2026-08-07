@@ -1,0 +1,80 @@
+.homePage {
+  width: min(1050px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.welcome {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem;
+  border: 1px solid #dbe4e8;
+  border-radius: 12px;
+  background: #ecfeff;
+}
+
+.welcomeText > p:first-child {
+  margin: 0;
+  color: #0e7490;
+  font-weight: 700;
+}
+
+.welcome h1 {
+  margin: 0.75rem 0;
+  color: #164e63;
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.description {
+  margin: 0 0 1.5rem;
+  color: #64748b;
+}
+
+.shopButton {
+  display: inline-block;
+  padding: 0.7rem 1.1rem;
+  border-radius: 8px;
+  background: #0891b2;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.shopButton:hover {
+  background: #0e7490;
+}
+
+.storefrontImage {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgb(14 116 144 / 18%);
+  /* transform: skew(-8deg); */
+  transform: perspective(800px) rotateY(-20deg);
+  transform-origin: right center;
+  transition: transform 0.4s ease;
+}
+
+.storefrontImage:hover {
+  /* transform: skew(0deg); */
+  transform: perspective(800px) rotateY(0deg);
+}
+
+@media (max-width: 500px) {
+  .homePage {
+    padding-top: 2rem;
+  }
+
+  .welcome {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .storefrontImage {
+    width: min(420px, 92%);
+    margin: 0 auto;
+  }
+}

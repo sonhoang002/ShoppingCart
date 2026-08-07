@@ -3,6 +3,7 @@ import ErrorPage from "./errorPage";
 import Shop from "./ShoppingPage/shopPage.jsx";
 import Cart from "./CartPage/cartPage.jsx";
 import Home from "./homePage";
+import CheckOutPage from "./CheckoutPage/checkOutPage.jsx";
 
 const routers = [
   {
@@ -21,6 +22,10 @@ const routers = [
       {
         path: "cart",
         element: <Cart />,
+      },
+      {
+        path: "checkout",
+        element: <CheckOutPage />,
       },
     ],
   },

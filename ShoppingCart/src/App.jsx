@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router";
+import { Link, NavLink, Outlet } from "react-router";
 import app from "./App.module.css";
+import "./App.css";
 
 function App() {
   const [cartItem, setCartItem] = useState([]);
@@ -10,8 +11,22 @@ function App() {
 
   // For Buy and "Add and Remove item" in PurchaseableItemContainer
   function handlePurchaseClick(item, numberOfItem) {
-    for (let i = 0; i < numberOfItem; i++) {
-      setCartItem((previousItem) => [...previousItem, item]);
+    const existingItem = cartItem.find(
+      (itemInside) => itemInside.id === item.id
+    );
+    if (existingItem) {
+      setCartItem((previousItem) => {
+        return previousItem.map((itemInCart) => {
+          return itemInCart.id === existingItem.id
+            ? { ...itemInCart, number: itemInCart.number + numberOfItem }
+            : itemInCart;
+        });
+      });
+    } else {
+      setCartItem((previousItem) => [
+        ...previousItem,
+        { ...item, number: numberOfItem },
+      ]);
     }
 
     setTotal(total + numberOfItem * item.price);
@@ -39,19 +54,46 @@ function App() {
 
   return (
     <>
-      <nav className={app.top}>
-        <Link className="navButton" to="/">
-          Home
-        </Link>
+      <header className={app.header}>
+        <div className={app.headerContent}>
+          <Link className={app.brand} to="/">
+            The Store
+          </Link>
 
-        <Link className="navButton" to="/shop">
-          Shop
-        </Link>
+          <nav className={app.top} aria-label="Main navigation">
+            <NavLink
+              className={({ isActive }) =>
+                `${app.navLink} ${isActive ? app.activeLink : ""}`
+              }
+              to="/"
+              end
+            >
+              Home
+            </NavLink>
 
-        <Link className="navButton" to="/cart">
-          Cart
-        </Link>
-      </nav>
+            <NavLink
+              className={({ isActive }) =>
+                `${app.navLink} ${isActive ? app.activeLink : ""}`
+              }
+              to="/shop"
+            >
+              Shop
+            </NavLink>
+
+            <NavLink
+              className={({ isActive }) =>
+                `${app.navLink} ${isActive ? app.activeLink : ""}`
+              }
+              to="/cart"
+            >
+              Cart
+              <span className={app.cartCount}>
+                {cartItem.reduce((count, item) => count + item.number, 0)}
+              </span>
+            </NavLink>
+          </nav>
+        </div>
+      </header>
 
       <Outlet
         context={{
