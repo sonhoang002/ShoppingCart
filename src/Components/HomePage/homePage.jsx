@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import home from "./homePage.module.css";
-import storefrontImage from "../assets/storefront-hero.png";
+import storefrontImage from "../../assets/storefront-hero.png";
 
 function Home() {
   return (

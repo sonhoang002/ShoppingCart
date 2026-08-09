@@ -2,7 +2,7 @@ import App from "../App";
 import ErrorPage from "./errorPage";
 import Shop from "./ShoppingPage/shopPage.jsx";
 import Cart from "./CartPage/cartPage.jsx";
-import Home from "./homePage";
+import Home from "./HomePage/homePage";
 import CheckOutPage from "./CheckoutPage/checkOutPage.jsx";
 
 const routers = [
