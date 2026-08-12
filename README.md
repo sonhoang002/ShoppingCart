@@ -1,18 +1,70 @@
-# React + Vite
+# The Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive storefront built with React. Browse products from the Fake Store API, filter the catalog by category, choose quantities, manage a cart, and complete a simulated checkout.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Product catalog populated from the [Fake Store API](https://fakestoreapi.com/)
+- Category filters with a collapsible sidebar
+- Per-product quantity controls
+- Cart quantity updates, item removal, and running totals
+- Checkout summary with 5% tax and purchase confirmation
+- Client-side routing for the home, shop, cart, and checkout pages
+- Responsive layout for desktop and mobile screens
+- Component tests for the main shopping flow
 
-## React Compiler
+> This is a demonstration project. Checkout is simulated and does not process real payments or orders.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Built with
 
-Note: This will impact Vite dev & build performances.
+- React 19
+- React Router
+- Vite
+- CSS Modules
+- Vitest and React Testing Library
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js 20.19+ or 22.12+
+- npm
+
+### Installation
+
+```bash
+git clone git@github.com:sonhoang002/ShoppingCart.git
+cd ShoppingCart
+npm install
+npm run dev
+```
+
+Open the local URL shown by Vite in your browser.
+
+## Available scripts
+
+```bash
+npm run dev        # Start the development server
+npm run build      # Create a production build
+npm run preview    # Preview the production build locally
+npm run lint       # Run ESLint
+npm test           # Run the test suite once
+npm run test:watch # Run tests in watch mode
+```
+
+## Project structure
+
+```text
+src/
+├── Components/
+│   ├── CartPage/
+│   ├── CheckoutPage/
+│   ├── HomePage/
+│   └── ShoppingPage/
+├── assets/
+├── test/
+├── App.jsx
+└── main.jsx
+```
+
+Product data and images require an internet connection on the first request because they are loaded from the Fake Store API.
